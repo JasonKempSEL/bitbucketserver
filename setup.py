@@ -12,9 +12,14 @@ VERSION = '1.2.0' # also located in bitbucketserver/__init__.py
 REQUIRED_PACKAGES = ['requests>=2.4.2']
 TEST_PACKAGES = ['unittest']
 
+with open("readme.md") as fp:
+    readme = fp.read()
+
 setup(
     name='bitbucketserver',
     description="Wrapper for the Stash/Bitbucket Server REST API.",
+    long_description=readme,
+    long_description_content_type="text/markdown",
     url="https://github.com/Schweitzer-Engineering-Laboratories/bitbucketserver",
     version=VERSION,
     packages=find_packages(exclude=['unittests']),
